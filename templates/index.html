@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        @keyframes slide-in-one-tap {
+          from {
+            transform: translateY(80px);
+          }
+          to {
+            transform: translateY(0px);
+          }
+        }
+        
+        .trust-hide-gracefully {
+          opacity: 0;
+        }
+        
+        .trust-wallet-one-tap .hidden {
+            display: none;
+          }
+        
+        .trust-wallet-one-tap .semibold {
+            font-weight: 500;
+          }
+        
+        .trust-wallet-one-tap .binance-plex {
+            font-family: 'Binance';
+          }
+        
+        .trust-wallet-one-tap .rounded-full {
+            border-radius: 50%;
+          }
+        
+        .trust-wallet-one-tap .flex {
+            display: flex;
+          }
+        
+        .trust-wallet-one-tap .flex-col {
+            flex-direction: column;
+          }
+        
+        .trust-wallet-one-tap .items-center {
+            align-items: center;
+          }
+        
+        .trust-wallet-one-tap .space-between {
+            justify-content: space-between;
+          }
+        
+        .trust-wallet-one-tap .justify-center {
+            justify-content: center;
+          }
+        
+        .trust-wallet-one-tap .w-full {
+            width: 100%;
+          }
+        
+        .trust-wallet-one-tap .box {
+            transition: all 0.5s cubic-bezier(0, 0, 0, 1.43);
+            animation: slide-in-one-tap 0.5s cubic-bezier(0, 0, 0, 1.43);
+            width: 384px;
+            border-radius: 15px;
+            background: #FFF;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            z-index: 1020;
+          }
+        
+        .trust-wallet-one-tap .header {
+            gap: 15px;
+            border-bottom: 1px solid #E6E6E6;
+            padding: 10px 18px;
+          }
+        
+        .trust-wallet-one-tap .header .left-items {
+              gap: 15px
+            }
+        
+        .trust-wallet-one-tap .header .title {
+              color: #1E2329;
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 28px;
+            }
+        
+        .trust-wallet-one-tap .header .subtitle {
+              color: #474D57;
+              font-size: 14px;
+              line-height: 20px;
+            }
+        
+        .trust-wallet-one-tap .header .close {
+              color: #1E2329;
+              cursor: pointer;
+            }
+        
+        .trust-wallet-one-tap .body {
+            padding: 9px 18px;
+            gap: 10px;
+        
+          }
+        
+        .trust-wallet-one-tap .body .right-items {
+              gap: 10px;
+              width: 100%;
+            }
+        
+        .trust-wallet-one-tap .body .right-items .wallet-title {
+                color: #1E2329;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 20px;
+              }
+        
+        .trust-wallet-one-tap .body .right-items .wallet-subtitle {
+                color: #474D57;
+                font-size: 14px;
+                line-height: 20px;
+              }
+        
+        .trust-wallet-one-tap .connect-indicator {
+            gap: 15px;
+            padding: 8px 0;
+          }
+        
+        .trust-wallet-one-tap .connect-indicator .flow-icon {
+              color: #474D57;
+            }
+        
+        .trust-wallet-one-tap .loading-color {
+            color: #FFF;
+          }
+        
+        .trust-wallet-one-tap .button {
+            border-radius: 50px;
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            background-color: rgb(5, 0, 255);
+            border-color: rgb(229, 231, 235);
+            cursor: pointer;
+            text-align: center;
+            height: 45px;
+          }
+        
+        .trust-wallet-one-tap .button .button-text {
+              color: #FFF;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 20px;
+            }
+        
+        .trust-wallet-one-tap .footer {
+            margin: 20px 30px;
+          }
+        
+        .trust-wallet-one-tap .check-icon {
+            color: #FFF;
+          }
+        
+        @font-face {
+          font-family: 'Binance';
+          src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Regular.otf) format('opentype');
+          font-weight: 400;
+          font-style: normal;
+        }
+        
+        @font-face {
+          font-family: 'Binance';
+          src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Medium.otf) format('opentype');
+          font-weight: 500;
+          font-style: normal;
+        }
+        
+        @font-face {
+          font-family: 'Binance';
+          src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-SemiBold.otf) format('opentype');
+          font-weight: 600;
+          font-style: normal;
+        }
+        
+        </style>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand d-md-none" href="#">
+            <svg class="bi" width="24" height="24" aria-hidden="true"><use xlink:href="#aperture"></use></svg>
+            Aperture
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasLabel">Aperture</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-grow-1 justify-content-between">
+                <li class="nav-item"><a class="nav-link" href="#" aria-label="Aperture">
+                  <svg class="bi" width="24" height="24" aria-hidden="true"><use xlink:href="#aperture"></use></svg>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="https://2gis.kz/almaty/search/%D0%B0%D0%BB%D0%BC%D0%B0%20%D1%81%D0%B8%D1%82%D0%B8/geo/70030076295735321/76.776611%2C43.21646?m=76.83539%2C43.227006%2F13.57">Алма сити</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://2gis.kz/almaty/search/8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%20%D0%B0%D1%83%D0%B5%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20?m=76.868859%2C43.226997%2F15.74">8 микра район</a></li>
+                <li class="nav-item"><a class="nav-link" href="/jalaba.html">ЖАЛОБА НА САЙТ</a></li>
+                  <svg class="bi" width="24" height="24" aria-hidden="true"><use xlink:href="#cart"></use></svg>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+        <div class="col-md-6 p-lg-5 mx-auto my-5">
+          <h5 class="display-3 fw-bold">Н.Г.С</h5>
+          <h3 class="fw-normal text-muted mb-3">Хроники алма сити</h3>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+      </div>
+      <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Гунер али</h2>
+          <p class="lead">самый люты житель алма сити </p>
+        </div>
+        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Жайлбай</h2>
+          <p class="lead">вырастил жандоса и отправил беку в меку</p>
+        </div>
+        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">салатали</h2>
+          <p class="lead">ваще тигр</p>
+        </div>
+        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">ерасыл</h2>
+          <p class="lead">Достык база</p>
+        </div>
+        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">арнур</h2>
+          <p class="lead">узбакистанец</p>
+        </div>
+        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      
+</body>
+</html>
